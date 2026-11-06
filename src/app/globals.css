@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-background);
+    color: var(--color-on-surface);
+  }
+
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    overscroll-behavior: none;
+    font-family: var(--font-inter), Inter, sans-serif;
+    min-height: 100vh;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+  }
+
+  :focus-visible {
+    outline: 3px solid #19b4db;
+    outline-offset: 2px;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.placeholder-outline::placeholder {
+  color: #727784;
+}
+
+#form-feedback.hidden,
+[data-form-error].hidden {
+  display: none;
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.stitch-root > header,
+.stitch-root > footer,
+.stitch-root > nav,
+.stitch-root > aside {
+  display: none !important;
+}
+
+.stitch-root > main {
+  padding-top: 0 !important;
+}
+
+.rc-brand {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.rc-logo {
+  display: block;
+  height: 60px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent;
+  border-radius: 0;
+  flex: 0 0 auto;
+  transition: transform 0.35s ease;
+}
+
+@media (max-width: 1023px) {
+  header .rc-logo,
+  header .rc-logo--on-dark {
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.rc-brand:hover .rc-logo {
+  transform: translateY(-1px);
+}
+
+.rc-logo--on-dark {
+  box-sizing: content-box;
+  height: 42px;
+  padding: 6px 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(2, 8, 40, 0.22);
+}
+
+.rc-logo--compact {
+  height: 40px;
+}
+
+.rc-logo--compact.rc-logo--on-dark {
+  height: 34px;
+  padding: 4px 8px;
+}
+
+a[href*="wa.me"]::before,
+a[href^="mailto:"]:not(:has(.material-symbols-outlined))::before,
+a[href^="tel:"]:not(:has(.material-symbols-outlined))::before {
+  content: "";
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.15em;
+  flex: 0 0 auto;
+  vertical-align: -0.18em;
+  background-color: currentColor;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+a[href*="wa.me"]::before {
+  background-color: #25d366;
+  -webkit-mask-image: url("/assets/icons/whatsapp.svg");
+  mask-image: url("/assets/icons/whatsapp.svg");
+}
+
+a[href*="wa.me"].text-white::before,
+a[href*="wa.me"].text-on-primary::before,
+a[href*="wa.me"][class*="text-white"]::before,
+a[href*="wa.me"][class*="25D366"]::before,
+a[href*="wa.me"][class*="bg-white"]::before,
+a[href*="wa.me"][class*="bg-on-primary"]::before {
+  background-color: currentColor;
+}
+
+a[href*="wa.me"] > .material-symbols-outlined {
+  display: none;
+}
+
+a[aria-label="Chat on WhatsApp"]::before {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 0;
+}
+
+a[href^="mailto:"]:not(:has(.material-symbols-outlined))::before {
+  -webkit-mask-image: url("/assets/icons/mail.svg");
+  mask-image: url("/assets/icons/mail.svg");
+}
+
+a[href^="tel:"]:not(:has(.material-symbols-outlined))::before {
+  -webkit-mask-image: url("/assets/icons/phone.svg");
+  mask-image: url("/assets/icons/phone.svg");
+}
+
+a.bg-primary-container,
+button.bg-primary-container {
+  background-image: linear-gradient(120deg, #083e8c 0%, #0b63c5 46%, #19b4db 140%);
+  background-size: 180% 180%;
+  background-position: 0% 50%;
+  transition: background-position 0.45s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a.bg-primary-container:hover,
+button.bg-primary-container:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 12px 28px -10px rgba(11, 99, 197, 0.55);
+}
+
+[class*="from-[#0A1A5C]"] {
+  background-size: 180% 180%;
+  animation: rc-gradient 16s ease-in-out infinite;
+}
+
+main .bg-surface-container-lowest.rounded-xl,
+main .bg-surface-container-lowest.rounded-2xl,
+main .bg-surface-container-lowest.rounded-3xl {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+main .bg-surface-container-lowest.rounded-xl:hover,
+main .bg-surface-container-lowest.rounded-2xl:hover,
+main .bg-surface-container-lowest.rounded-3xl:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -16px rgba(10, 26, 92, 0.2);
+}
+
+@keyframes rc-gradient {
+  0% {
+    background-position: 0% 40%;
+  }
+  50% {
+    background-position: 100% 60%;
+  }
+  100% {
+    background-position: 0% 40%;
+  }
+}
+
+@keyframes rc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+main section {
+  animation: rc-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+main section:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+main section:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .stitch-spinner {
+    animation-duration: 1.2s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
